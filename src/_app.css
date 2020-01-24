@@ -1,0 +1,116 @@
+
+.navbar{
+    margin-bottom: 30px;
+}
+.form-group{
+    margin-bottom: 10px;
+}
+.form-group label{
+    width: 100%;
+}
+.form-group label{
+    font-size: 16px;
+    font-weight: 600;
+}
+.navbar-brand img{
+    margin-right: 10px
+}
+.navbar-nav{
+    flex-direction: row;
+}
+.navbar-nav li{
+    margin-right: 15px
+}
+.error-info{
+    position: absolute;
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 2px;
+}
+input[type="submit"]{
+    margin-top: 10px
+}
+.new-ticket-section{
+    padding: 30px 20px;
+    align-items: center;
+}
+.last-ticket{
+
+}
+.add-ticket{
+    box-shadow: 7.009px 7.009px 5.006px rgba(175,194,203,.251);
+    padding: 30px;
+}
+.add-ticket h2, .last-ticket h2{
+    font-size: 22px;
+    text-align: center;
+}
+.btn{
+    padding: 3px 15px;
+    font-size: 14px;
+}
+.new-ticket-section .btn-primary{
+    width: 100%;
+}
+
+.ticket-listing{
+    padding: 30px 20px;
+}
+.ticket-listing h1{
+    font-size: 26px;
+    margin: 0;
+}
+.count{
+    color: #c2c2c2;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+.ticket-listing ul{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+.ticket-listing li{
+    padding: 15px 30px;
+    margin-bottom: 15px;
+    box-shadow: 7.009px 7.009px 5.006px rgba(175,194,203,.251);
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+.ticket-listing li:hover{
+    border: 1px solid #007bff
+}
+.ticket-listing li h3, .ticket-detail h3{
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+.ticket-listing li h3 span, .ticket-detail h3 span{
+    font-weight: 400;
+    margin-left: 10px;
+}
+.back-icon{
+    display: flex;
+    align-items: baseline;
+    cursor: pointer;
+}
+.back-icon p{
+    margin-left: 5px;
+}
+.ticket-detail{
+    padding: 15px 60px 15px 30px;
+    position: relative;
+    margin-bottom: 15px;
+    box-shadow: 7.009px 7.009px 5.006px rgba(175,194,203,.251);
+    border-radius: 6px;
+    cursor: text;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+.ticket-detail .btn-danger{
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+}

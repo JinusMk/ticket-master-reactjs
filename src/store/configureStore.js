@@ -3,7 +3,7 @@ import ticketsReducer from '../reducers/tickets'
 
 const configureStore = () => {
     const store = createStore(combineReducers({
-        tickets: ticketsReducer
+        tickets: ticketsReducer,
     }))
     return store  
 }

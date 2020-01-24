@@ -4,16 +4,22 @@ import { Link } from 'react-router-dom'
 const TicketList = (props) => {
     console.log(props)
     return (
-        <div>
-            <h1> Listing Tickets - { props.tickets.length} </h1>
+        <section className="ticket-listing">
+            <h1>Tickets</h1>
+            <h6 className="count">Found {props.tickets.length} records</h6>
             <ul>
                 { props.tickets.map(ticket => {
-                    return <li key={ticket.id}> <Link to={`/tickets/${ticket.id}`}>{ ticket.name } </Link> </li>
+                    return <li className="ticket-list-item" onClick={() => props.history.push(`/tickets/${ticket.id}`)}>
+                        <h3>Name :<span>{ticket.name.toUpperCase()}</span></h3>
+                        <h3>Department :<span>{ticket.department}</span></h3>
+                        <h3>Priority :<span className="badge badge-success">{ticket.priority.toUpperCase()}</span></h3>
+                        <h3 style={{margin: 0}}>Message :<span>{ticket.message}</span></h3>
+                    </li>
                 })}
             </ul>
 
             <Link to="/tickets/new" className="btn btn-primary"> Add Ticket </Link>
-        </div> 
+        </section> 
     )
 }
 

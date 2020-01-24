@@ -4,19 +4,17 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 import TicketList from './components/tickets/List'
 import TicketNew from './components/tickets/New'
 import TicketShow from './components/tickets/Show'
+import NavBar from './components/NavBar'
+import './_app.css'
 
 const App = (props) => {
   return (
     <BrowserRouter>
       <div className="container">
-            <h2> Ticket Master </h2>
-            <ul>  
-                <li><Link to="/tickets">Tickets</Link></li>
-            </ul>
-            
-    
+        <NavBar />
         <Switch>
-          <Route path="/tickets" component={TicketList} exact={true} />
+          <Route path="/" component={TicketList} exact />
+          <Route path="/home" component={TicketList} exact />
           <Route path="/tickets/new" component={TicketNew} exact={true} />
           <Route path="/tickets/:id" component={TicketShow} />
         </Switch>

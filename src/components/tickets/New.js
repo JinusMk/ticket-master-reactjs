@@ -10,32 +10,28 @@ import { addTicket } from '../../actions/tickets'
 const TicketNew = (props) => {
 
     const handleSubmit = (formData) => {
-        console.log('new', formData) 
+        console.log('add ticket inside')
         props.dispatch(addTicket(formData))
-        props.history.push('/tickets')
+        props.history.push('/home')
     }
 
     return (
-        <div className="row">
-            <div className="col-md-8">
+        <div className="row new-ticket-section" >
+            <div className="col-md-6 add-ticket">
                 <h2> Add Ticket </h2>
-                <TicketForm handleSubmit={handleSubmit} />
+                <TicketForm addTicket={handleSubmit} />
             </div>
-
-            <div className="col-md-4">
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title">Last Ticket</h5>
-                        {   props.previousTicket ? (
-                                <React.Fragment> 
-                                    <p className="card-text"> {props.previousTicket.name} </p>
-                                    <Link to={`/tickets/${props.previousTicket.id}`}>Show</Link> 
-                                </React.Fragment>) : ( 
-                                    <p> This is the first ticket </p> 
-                                ) 
-                        }
-                    </div>
-                </div>
+            <div className="col-md-4 last-ticket offset-md-2">
+                {props.previousTicket ? <>
+                    <h2 className="title">Last Ticket</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{props.previousTicket.name.toUpperCase()}</h5>
+                            <p class="card-text">{props.previousTicket.message}</p>
+                            <p>Priority: <span className="badge badge-success">{props.previousTicket.priority.toUpperCase()}</span></p>
+                            <Link to={`/tickets/${props.previousTicket.id}`} className="btn btn-primary">Show</Link> 
+                        </div>
+                    </div> </>: null}
             </div>
             
         </div> 
